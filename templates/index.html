@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MUNICIPAL WASTE CLASSIFICATION</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: "Segoe UI", sans-serif;
+    }
+    body {
+      background: url("{{ url_for('static', filename='images/landing-background.jpg') }}")
+        no-repeat center center/cover;
+      color: white;
+    }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    .navbar ul li a:hover {
+      color: #28a745;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 40px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+    .btn {
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #218838;
+    }
+    .theory-box {
+      background-color: rgba(255, 255, 255, 0.88);
+      color: #222;
+      max-width: 800px;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .theory-box h3 {
+      color: #28a745;
+      margin-bottom: 10px;
+    }
+    .theory-box p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="{{ url_for('index') }}">Home</a></li>
+      <li><a href="{{ url_for('about') }}">About</a></li>
+      <li><a href="{{ url_for('predict_page') }}">Predict</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h1>MUNICIPAL WASTE CLASSIFICATION</h1>
+
+    <div class="theory-box">
+      <h3>How It Works</h3>
+      <p>
+        This platform allows you to upload images of waste materials, and our intelligent machine learning model classifies them into biodegradable, recyclable, or non-biodegradable categories.
+        Proper classification promotes better recycling, efficient waste management, and contributes to a cleaner, more sustainable environment.
+      </p>
+    </div>
+
+    <p>Welcome to our intelligent waste management system. This platform enables AI-powered identification of biodegradable, recyclable, and trash waste materials for improved sanitation efforts.</p>
+    <a href="{{ url_for('predict_page') }}" class="btn">GET STARTED</a>
+  </section>
+</body>
+</html>

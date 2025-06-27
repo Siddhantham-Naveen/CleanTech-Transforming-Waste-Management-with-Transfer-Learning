@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prediction Result</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f3f3;
+    }
+    .result-section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .result-section h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .subtitle {
+      color: #666;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    .result-box {
+      display: inline-block;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px 30px;
+      font-size: 22px;
+      color: #28a745;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .image-preview {
+      margin-top: 40px;
+    }
+    .image-preview img {
+      max-width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 6px;
+    }
+    .back-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <section class="result-section">
+    <h1>WASTE CLASSIFICATION</h1>
+    <p class="subtitle">Cleanliness Detection</p>
+
+    <div class="result-box">
+      Classified as: {{ prediction }}
+    </div>
+
+    <div class="image-preview">
+      <h3>Uploaded Image:</h3>
+      <img src="{{ url_for('static', filename='uploads/' ~ uploaded_image) }}" alt="Uploaded Image" />
+    </div>
+
+    <a href="{{ url_for('index') }}" class="back-btn">← Back to Home</a>
+  </section>
+</body>
+</html>
